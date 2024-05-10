@@ -29,7 +29,7 @@
     <div id="read-later">
         <form action="{% url 'read-later' %}" method="POST">
             {% csrf_token %}
-            <input type="hidden" value="{{post.id}}" name="post_id"/>
+            <input type="hidden" value="{{post.id}}" name="post_id" />
             <button>
                 {% if is_saved_for_later %}
                 Remove from "Read Later" List
@@ -52,6 +52,7 @@
     {{post.content|linebreaks}}
 </main>
 
+{% if comments %}
 <section id="comments">
     <ul>
         {% for comment in comments %}
@@ -62,6 +63,7 @@
         {% endfor %}
     </ul>
 </section>
+{% endif %}
 
 <section id="comment-form">
     <h2>Your Comment</h2>
