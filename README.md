@@ -1,238 +1,155 @@
-<a name="readme-top"></a>
-
 # Super Adventure Blog
-
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li><a href="#features">Features</a></li>
-    <li><a href="#components-used-in-the-project">Components Used In The Project</a></li>
-    <li><a href="#roles-in-project">Roles In Project</a></li>
-    <li><a href="#screenshots">Screenshots</a></li>
-    <li><a href="#project-setup">Project Setup</a></li>
-  </ol>
-</details>
 
 ## About The Project
 
-SimonsTarget Inc. - e-commerce website, that facilitates consumer-to-consumer and business-to-consumer sales.\
-Client selects required product from the list of available ones.
-Adds the product to shopping cart. Then customer specifies quantity of the items in cart and orders them. It's also possible to specify another email and payment card information during checkout.
-Ordered items are removed from the cart. Client manages the list of his own products. 
-Administrator views all users, block/unblock them and also views all completed orders.
+Super Adventure Blog - personal blog about IT and travelling.
+
+The blog administrator, who is also the owner, oversees the management of posts, authors, and tags, and moderates comments through an administrative interface provided by the Django framework. \
+Visitors have the ability to view all posts and associated tags, comment on individual posts, and bookmark posts to a 'Read Later' list. These bookmarked posts can be accessed on the 'Stored Posts' page, which retains the saved posts for the duration of the visitor's HTTP session. Additionally, visitors can remove posts from their 'Stored Posts' list as needed.
 
 ### Built With
 
-* [![Express][Express.com]][Express-url]
-* [![MongoDB][MongoDB.com]][MongoDB-url]
-* [![Node][Node.com]][Node-url]
-* [![NPM][NPM.com]][NPM-url]
-* [![Nodemon][Nodemon.com]][Nodemon-url]
+* [![SQLite][SQLite.com]][SQLite-url]
+* [![Django][Django.com]][Django-url]
 * [![VSCode][VSCode.com]][VSCode-url]
-* [![Stripe][Stripe.com]][Stripe-url]
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+## Key Features
 
-## Features
-
-- Implementation of Authentication and Authorization
-- Pagination on various pages for the best user experience
-- Password change is done via email using a temporary token
-- Creation of order invoices in pdf format
-- Payments are made through Stripe api
-- CSRF Protection
-- Storing hashed passwords in database
-- Compressing assets with Compression
-- Request logging with Morgan
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+- Cross-Site Request Forgery (CSRF) Protection: Ensures the security of the site against unauthorized actions by authenticated users.
+- Session-Based Bookmarking: Implements the storage of article IDs for the 'Read Later' feature within user sessions.
+- Dual-Level Comment Validation: Provides thorough validation of visitor comments, both on the client-side (frontend) and server-side (backend)."
 
 ## Components Used In The Project:
 
-- nodemon 1.14.9
-- bcryptjs 2.4.3
-- body-parser 1.20.2
-- connect-flash 0.1.1
-- connect-mongodb-session 3.1.1
-- csurf 1.11.0
-- ejs 3.1.9
-- express 4.18.2
-- express-session 1.17.3
-- express-validator 7.0.1
-- mongoose 5.13.19
-- multer 1.4.4
-- nodemailer 6.9.3
-- pdfkit 0.8.3
-- stripe 12.10.0
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## Roles In Project
-
-### All users (including unauthorised)
-
-- View all products with pagination
-- View product details
-- Sign in
-- Sign up
-
-### Authorised users (clients, administrators)
-
-- View products in cart, add products to cart, remove products from cart
-- Order products from the cart specifying the quantity of each item
-- View personal purchase history
-- Create invoice in pdf format for any of your orders
-- Crud operations with your own products
-- Change password
-- Logout
-
-### Only administrators
-
-- View all users
-- Block/Unblock any user
-- View purchase history of all users
+- Django 5.0.6
+- pillow 10.3.0
+- asgiref 3.8.1
+- sqlparse 0.5.0
+- tzdata 2024.1
 
 ***
 
-- __Administrator:__ email = `admin@admin.admin`, password = `admin`
-- __Client:__ email = `alexward2096@gmail.com`, password = `111111`
+- __Administrator:__ login = `admin`, password = `61003355120518`
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+## Screenshots of Main Functionality
 
-## Screenshots
+### Main Page:
 
-### Login Page:
+![main-page]
 
-![login_page]
+### My Stored Posts Page:
 
-### Signup Page:
+![my-stored-posts-page-1]
 
-![signup_page]
+### My Stored Posts Page (with empty posts collection):
 
-### Home Page:
+![my-stored-posts-page-2]
 
-![home_page]
+### All Posts Page:
 
-### Product Details Page:
+![all-posts-page]
 
-![product_details_page]
+### Specific Post Page:
 
-### Cart Page:
+![specific-post-page]
 
-![cart_page]
+### Django Site Admin Pages:
 
-### Checkout Page:
+![django-site-admin-page-1]
 
-![checkout_page]
+![django-site-admin-page-2]
 
-### Stripe Payment Page:
-
-![stripe_payment_page]
-
-### Orders Page:
-
-![orders_page]
-
-### Invoice PDF:
-
-![invoice_pdf]
-
-### Add Product Page:
-
-![add_product_page]
-
-### User Products Page:
-
-![user_products_page]
-
-### Administrator Orders Page:
-
-![administrator_orders_page]
-
-### Administrator Users Page:
-
-![administrator_users_page]
-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+![django-site-admin-page-3]
 
 ## Project Setup
 
-### 1. Clone the repository
+### Clone the repository
 ```
-$ git clone https://github.com/Aleksey2096/Shop-Express-Mongoose.git
-```
-
-### 2. Install NPM packages
-```
-npm install
+$ git clone https://github.com/Aleksey2096/django_project.git
 ```
 
-### 3.1 Start server
+### Start development server
 ```
-npm start-server
-```
-
-### 3.2 Start server with hot-reloads for development
-```
-npm start
+$ python manage.py runserver
 ```
 
-### Run your tests
+### Create new project with the given name
 ```
-npm test
+$ django-admin startproject <project_name>
 ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+### Create new app within your project
+```
+$ django-admin startapp <app_name>
+```
+
+### Create new database migration files based on the changes you've made to your models
+```
+$ python manage.py makemigrations
+```
+
+### Apply pending database migrations to synchronize the database schema with your current set of models
+```
+$ python manage.py migrate
+```
+
+### Create new superuser account for accessing the Django admin interface
+```
+$ python manage.py createsuperuser
+```
+
+### Open up the Django shell, an interactive Python shell with Django environment loaded
+```
+$ python manage.py shell
+```
+
+### Collect static files from your apps into the static root directory defined in your settings
+```
+$ python manage.py collectstatic
+```
+
+### Run tests for your Django project
+```
+$ python manage.py test
+```
+
+### Open up the database shell for your configured database, allowing you to execute SQL commands directly
+```
+$ python manage.py dbshell
+```
+
+### Generate file in your project directory, listing all the installed Python packages along with their versions
+```
+$ pip freeze > <file_name>.txt
+```
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
-[Express.com]: https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white
+[SQLite.com]: https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white
 
-[Express-url]: https://expressjs.com/
+[SQLite-url]: https://www.sqlite.org/
 
-[Node.com]: https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white
+[Django.com]: https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white
 
-[Node-url]: https://nodejs.org/en
-
-[NPM.com]: https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white
-
-[NPM-url]: https://www.npmjs.com/
-
-[MongoDB.com]: https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white
-
-[MongoDB-url]: https://www.mongodb.com/
-
-[Stripe.com]: https://img.shields.io/badge/Stripe-626CD9?style=for-the-badge&logo=Stripe&logoColor=white
-
-[Stripe-url]: https://stripe.com/
+[Django-url]: https://www.djangoproject.com/
 
 [VSCode.com]: https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white
 
 [VSCode-url]: https://code.visualstudio.com/
 
-[Nodemon.com]: https://img.shields.io/badge/NODEMON-%23323330.svg?style=for-the-badge&logo=nodemon&logoColor=%BBDEAD
 
-[Nodemon-url]: https://nodemon.io/
+[main-page]:project-info/main_page.png
 
+[my-stored-posts-page-1]:project-info/my_stored_posts_page_1.png
 
-[login_page]:project-info/login_page.png
-[signup_page]:project-info/signup_page.png
-[home_page]:project-info/home_page.png
-[product_details_page]:project-info/product_details_page.png
-[cart_page]:project-info/cart_page.png
-[checkout_page]:project-info/checkout_page.png
-[stripe_payment_page]:project-info/stripe_payment_page.png
-[orders_page]:project-info/orders_page.png
-[invoice_pdf]:project-info/invoice_pdf.png
-[add_product_page]:project-info/add_product_page.png
-[user_products_page]:project-info/user_products_page.png
-[administrator_orders_page]:project-info/administrator_orders_page.png
-[administrator_users_page]:project-info/administrator_users_page.png
+[my-stored-posts-page-2]:project-info/my_stored_posts_page_2.png
+
+[all-posts-page]:project-info/all_posts_page.png
+
+[specific-post-page]:project-info/specific_post_page.png
+
+[django-site-admin-page-1]:project-info/django_site_admin_page_1.png
+
+[django-site-admin-page-2]:project-info/django_site_admin_page_2.png
+
+[django-site-admin-page-3]:project-info/django_site_admin_page_3.png
