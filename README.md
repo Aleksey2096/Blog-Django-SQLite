@@ -1,5 +1,22 @@
 # Super Adventure Blog
 
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li><a href="#key-features">Key Features</a></li>
+    <li><a href="#components-used-in-the-project">Components Used In The Project</a></li>
+    <li><a href="#screenshots-of-main-functionality">Screenshots of Main Functionality</a></li>
+    <li><a href="#project-setup">Project Setup</a></li>
+  </ol>
+</details>
+
 ## About The Project
 
 Super Adventure Blog - personal blog about IT and travelling.
