@@ -63,15 +63,29 @@ Visitors have the ability to view all posts and associated tags, comment on indi
 
 ## Project Setup
 
-### Clone the repository
+### 1. Clone the repository
 ```
 $ git clone https://github.com/Aleksey2096/django_project.git
 ```
 
-### Start development server
+### 2. Install dependencies: Use pip, the Python package manager, to install the dependencies listed in the project's <file_with_project_requirements>.txt
+```
+$ pip install -r <file_with_project_requirements>.txt
+```
+
+### 3. Configure database (if needed): If the Django project requires a database and it's not already set up, you may need to create and configure the database. This usually involves running Django management commands like makemigrations, migrate, and possibly createsuperuser if the project includes user authentication.
+```
+$ python manage.py makemigrations
+$ python manage.py migrate
+$ python manage.py createsuperuser
+```
+
+### 4. Run the development server: Once all dependencies are installed and the database is set up, you can start the Django development server to see the project in action.
 ```
 $ python manage.py runserver
 ```
+
+***
 
 ### Create new project with the given name
 ```
